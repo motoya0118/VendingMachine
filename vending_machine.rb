@@ -1,7 +1,9 @@
 require_relative '/Users/motoya/study/vending_machine/drink.rb'
+require_relative '/Users/motoya/study/vending_machine/wllet.rb'
 
 class VendingMachine
   include Drink
+  include Wallet
   
   MONEY = [10, 50, 100, 500, 1000].freeze
 
@@ -9,6 +11,9 @@ class VendingMachine
     @slot_money = 0
     @sum = 0
     @drinks = initialize_drink
+    @money = Money.new('現金')
+    @money = Money.new('suica')
+    @money = Money.new('paypay')
   end
 
   def current_slot_money
