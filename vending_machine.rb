@@ -47,7 +47,6 @@ class VendingMachine
     end
     
     target_drink = find_target_drink(@drinks,name)
-    puts target_drink
     if target_drink
       target_drink.stock += stock
     else
