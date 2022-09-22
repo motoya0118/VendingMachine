@@ -1,18 +1,12 @@
-module Drink
-  def initialize_drink
-    {
-      "cola"=>{
-        price:120,
-        num:5
-      },
-      "redbull"=>{
-        price:200,
-        num:5
-      },
-      "water"=>{
-        price:100,
-        num:5
-      }
-    }
+class Drink
+  attr_accessor :name, :price, :stock
+  def initialize(name,price,stock)
+    @name = name
+    @price = price
+    @stock = stock
+  end
+
+  def buyable?(money)
+    self.stock > 0 && money >= self.price
   end
 end
